@@ -44,6 +44,45 @@ function App() {
         >
           Grey
         </button>
+
+        <button
+          className="flex-auto bg-red rounded-2xl p-2 justify-center"
+          style={{ backgroundColor: "Navy" }}
+          onClick={() => setColor("Navy")}
+        >
+          Navy
+        </button>
+        <button
+          className="flex-auto bg-red rounded-2xl p-2 justify-center"
+          style={{
+            backgroundColor: "FloralWhite",
+            color: "black",
+          }}
+          onClick={() => setColor("White")}
+        >
+          White
+        </button>
+        <button
+          className="flex-auto bg-red rounded-2xl p-2 justify-center"
+          style={{ backgroundColor: "black", color: "white" }}
+          onClick={() => setColor("black")}
+        >
+          Black
+        </button>
+        <button
+          className="flex-auto bg-red rounded-2xl p-2 justify-center"
+          style={{ backgroundColor: "Coral" }}
+          onClick={() => setColor("Coral")}
+        >
+          Coral
+        </button>
+        <button
+          className="flex-auto bg-red rounded-2xl p-2 justify-center"
+          style={{ backgroundColor: "Indigo" }}
+          onClick={() => setColor("Indigo")}
+        >
+          Indigo
+        </button>
       </div>
     </div>
   );
