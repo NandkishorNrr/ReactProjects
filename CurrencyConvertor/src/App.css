@@ -1,6 +1,61 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  /* margin: 0 auto; */
+  /* padding: 2rem; */
   text-align: center;
+}
+
+/* Reset default margin and padding */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Hide horizontal scroll bar */
+}
+
+/* Apply background image to the entire viewport */
+.bg-container {
+  background-image: url("https://au.moneyexchangerate.org/dist/img/money-exchange-rate-org.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styles for the content within the container */
+.content {
+  max-width: 40%; /* Adjust as needed */
+  width: 100%; /* Ensure the content takes full width of the container */
+  margin: 0 auto; /* Center the content horizontally */
+  margin-left: auto; /* Shift the content to the right */
+  margin-right: 100px; /* Provide additional margin on the right */
+  padding: 20px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.258
+  ); /* Semi-transparent background */
+  border: 2px solid #f0f0f0;
+  border-radius: 10px;
+}
+.swap-button {
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  background-color: #1e88e5;
+  color: #ffffff;
+  font-size: 18px;
+  cursor: pointer;
+  outline: none;
+}
+
+.myBtn:hover {
+  background-color: rgb(1, 37, 156); /* Change color on hover */
+}
+
+.btn:focus {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow on focus */
 }

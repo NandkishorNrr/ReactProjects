@@ -6,7 +6,7 @@ function useCurrencyInfo(currency) {
     fetch(`https://open.er-api.com/v6/latest/${currency}`)
       .then((res) => res.json())
       .then((res) => setData(res["rates"]));
-    console.log(data);
+    // console.log(data);
   }, [currency]);
   return data;
 }
