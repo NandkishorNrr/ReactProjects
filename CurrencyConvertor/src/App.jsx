@@ -2,7 +2,6 @@ import React, { useCallback, useState } from "react";
 import InputBox from "./components/InputBox";
 import useCurrencyInfo from "./hooks/useCurrencyInfo";
 import { FiRepeat } from "react-icons/fi";
-
 import "./App.css";
 
 function App() {
@@ -10,6 +9,7 @@ function App() {
   const [fromCurrency, setFromCurrency] = useState("INR");
   const [toCurrency, setToCurrency] = useState("USD");
   const [convertAmount, setConvertAmount] = useState(0);
+  const [rotatedAngle, setRotatedAngle] = useState(0); // Changed default rotation angle to 0
 
   const fromCurrencyInfo = useCurrencyInfo(fromCurrency);
   const toCurrencyInfo = useCurrencyInfo(toCurrency);
@@ -17,18 +17,16 @@ function App() {
   const fromCurrencyOptions = Object.keys(fromCurrencyInfo);
   const toCurrencyOptions = Object.keys(toCurrencyInfo);
 
-  const [rotatedAngle, setRotatedAngle] = useState(90);
   const swapCurrencies = () => {
-    // Swapping currencies
-    const tempC = fromCurrency;
+    const tempFromCurrency = fromCurrency;
     setFromCurrency(toCurrency);
-    setToCurrency(tempC);
+    setToCurrency(tempFromCurrency);
 
-    const tempA = amount;
+    const tempAmount = amount;
     setAmount(convertAmount);
-    setConvertAmount(tempA);
+    setConvertAmount(tempAmount);
 
-    setRotatedAngle(rotatedAngle === 90 ? 0 : 90);
+    setRotatedAngle(rotatedAngle === 0 ? 90 : 0); // Toggle between 0 and 90 degrees
   };
 
   const convert = () => {
@@ -41,7 +39,7 @@ function App() {
         <form>
           <div className="mb-1">
             <InputBox
-              className="bg-orange-500 font-black text-orange-900"
+              className="bg-orange-500 font-black text-orange-900" // Adjusted background and text colors
               label="From"
               amount={amount}
               currencyOptions={fromCurrencyOptions}
@@ -56,16 +54,15 @@ function App() {
           <div className="relative h-0.5 mb-4">
             <button
               type="button"
-              className={`absolute left-1/2 -translate-x-1/2 -translate-y-1/2 border-2  border-white rounded-full bg-blue-800 text-white w-16 h-16 flex justify-center items-center myBtn rotate-${rotatedAngle}`}
+              className={`absolute left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-white rounded-full bg-blue-800 text-white w-16 h-16 flex justify-center items-center myBtn rotate-${rotatedAngle}`}
               onClick={swapCurrencies}
             >
               <FiRepeat size={24} /> {/* Render the icon */}
             </button>
           </div>
-
           <div className="mt-1">
             <InputBox
-              className="bg-green-500 font-black text-green-900"
+              className="bg-green-500 font-black text-green-900" // Adjusted background and text colors
               label="To"
               amount={convertAmount}
               currencyOptions={toCurrencyOptions}
