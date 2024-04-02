@@ -4,7 +4,17 @@
   padding: 2rem;
   text-align: center;
 }
-
+.container {
+  width: 35vw;
+  height: 85vh; /* 95% of the viewport height */
+  text-align: center;
+  margin-top: 50px;
+  background: #494848;
+  border-radius: 2%;
+}
+.counter {
+  padding-top: 20px;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -33,10 +43,106 @@
   }
 }
 
-.card {
-  padding: 2em;
+.container {
+  text-align: center;
+  margin-top: 50px;
 }
 
-.read-the-docs {
-  color: #888;
+h1 {
+  color: #120f0f;
+}
+
+h2 {
+  font-size: 3rem;
+  color: #0a0a0a;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #120f0f;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.button-group {
+  margin-right: 10px;
+  margin-bottom: 10px; /* Add margin bottom to create space */
+}
+
+.btn {
+  font-size: 2rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: hsl(0, 34%, 75%);
+  color: hsl(0, 50%, 11%);
+}
+
+.btn-increase {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.btn-decrease {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.btn-reset {
+  background-color: #2196f3;
+  color: #fff;
+}
+
+.btn-double {
+  background-color: #ff9800;
+  color: #fff;
+}
+
+.step-input {
+  margin-top: 20px;
+}
+
+label {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+input[type="number"] {
+  font-size: 1.2rem;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+@media (max-width: 767px) {
+  .button-group {
+    display: flex; /* Change to flex for stacking buttons vertically */
+    justify-content: center; /* Center the buttons horizontally */
+    margin-right: 0; /* Remove right margin */
+    margin-bottom: 10px; /* Keep bottom margin */
+  }
+}
+@media (max-width: 767px) {
+  .button-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Increase bottom margin for spacing */
+  }
+
+  .button-group > div {
+    margin-right: 10px; /* Add horizontal spacing between buttons */
+  }
+
+  .button-group > div:last-child {
+    margin-right: 0; /* Remove right margin from the last button */
+  }
 }
