@@ -1,68 +1,88 @@
-import React, { Component } from "react";
-import "./App.css";
-import List from "./components/List";
+import { useState } from "react";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      inputText: "",
-      listTodo: [],
-    };
-  }
+function App() {
+  const [color, setColor] = useState("pink");
 
-  addList = (input) => {
-    if (input !== "") this.setState({ listTodo: [...this.state.listTodo, input] });
-  };
-
-  deleteItem = (key) => {
-    let newListTodo = [...this.state.listTodo];
-    newListTodo.splice(key, 1);
-    this.setState({ listTodo: [...newListTodo] });
-  };
-
-  render() {
-    return (
-      <div className="card">
-        <h1>ToDo</h1>
-        <hr />
-        <input
-          type="text"
-          placeholder="To do..."
-          value={this.state.inputText}
-          onChange={(e) => {
-            this.setState({ inputText: e.target.value });
-          }}
-          style={{
-            margin: "2%",
-            border: "1px solid black",
-            height: "45px",
-            width: "70%",
-            borderRadius: "10px",
-            padding: "5px",
-          }}
-        />
+  return (
+    <div
+      className="w-full h-screen flex ... duration-200 flex flex-wrap justify-center"
+      style={{ backgroundColor: color }}
+    >
+      <div className="m-3 gap-2 fixed flex flex-wrap justify-center bottom-1 px-2 bg-white rounded-3xl p-1 flex flex-wrap justify-center">
+        <button
+          className="flex-auto bg-red rounded-2xl p-2 justify-center"
+          style={{ backgroundColor: "red" }}
+          onClick={() => setColor("red")}
+        >
+          Red
+        </button>
+        <button
+          className="flex-auto bg-red rounded-2xl p-2 justify-center"
+          style={{ backgroundColor: "green" }}
+          onClick={() => setColor("green")}
+        >
+          Green
+        </button>
+        <button
+          className="flex-auto bg-red rounded-2xl p-2 justify-center"
+          style={{ backgroundColor: "blue" }}
+          onClick={() => setColor("blue")}
+        >
+          Blue
+        </button>
+        <button
+          className="flex-auto bg-red rounded-2xl p-2 justify-center"
+          style={{ backgroundColor: "yellow" }}
+          onClick={() => setColor("yellow")}
+        >
+          Yellow
+        </button>
+        <button
+          className="flex-auto bg-red rounded-2xl p-2 justify-center"
+          style={{ backgroundColor: "grey" }}
+          onClick={() => setColor("grey")}
+        >
+          Grey
+        </button>
 
         <button
-          style={{
-            color: "green",
-            fontSize: "",
-          }}
-          onClick={() => {
-            this.addList(this.state.inputText);
-            this.setState({ inputText: "" });
-          }}
+          className="flex-auto bg-red rounded-2xl p-2 justify-center"
+          style={{ backgroundColor: "Navy", color: "white" }}
+          onClick={() => setColor("Navy")}
         >
-          +
+          Navy
         </button>
-        <div className="content">
-          {this.state.listTodo.map((listItem, i) => {
-            return <List key={i} index={i} item={listItem} deleteItem={this.deleteItem} />;
-          })}
-        </div>
+        <button
+          className="flex-auto bg-red rounded-2xl p-2 justify-center "
+          style={{ border: "0.02px solid black" }}
+          onClick={() => setColor("White")}
+        >
+          White
+        </button>
+        <button
+          className="flex-auto bg-red rounded-2xl p-2 justify-center"
+          style={{ backgroundColor: "black", color: "white" }}
+          onClick={() => setColor("black")}
+        >
+          Black
+        </button>
+        <button
+          className="flex-auto bg-red rounded-2xl p-2 justify-center"
+          style={{ backgroundColor: "Coral" }}
+          onClick={() => setColor("Coral")}
+        >
+          Coral
+        </button>
+        <button
+          className="flex-auto bg-red rounded-2xl p-2 justify-center"
+          style={{ backgroundColor: "Indigo" }}
+          onClick={() => setColor("Indigo")}
+        >
+          Indigo
+        </button>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default App;
